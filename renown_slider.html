@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Character Scores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: white;
+            font-family: 'Cinzel', serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .character-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .character {
+            margin-bottom: 30px;
+        }
+
+        .character h2 {
+            margin-bottom: 10px;
+        }
+
+        .slider-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .slider-group label {
+            width: 150px;
+        }
+
+        input[type="range"] {
+            width: 60%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 10px;
+            background: linear-gradient(to right, #a87d3d, #6d28a7);
+            outline: none;
+            opacity: 0.8;
+            border-radius: 5px;
+        }
+
+        input[type="number"] {
+            width: 60px;
+            margin-left: 10px;
+        }
+
+        .status {
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .dm-controls {
+            background-color: #3e3e3e;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DnD Character Reputation & World Perception</h1>
+
+    <!-- DM Login -->
+    <div>
+        <button onclick="showDMSection()">DM Login</button>
+        <input type="password" id="password" placeholder="Enter password">
+    </div>
+
+    <div class="character-container">
+
+        <!-- Character: Hibbot WiseMan -->
+        <div class="character">
+            <h2>Hibbot WiseMan (Renomeret: The Clasp)</h2>
+            
+            <div class="dm-controls" id="dm-section-hibbot" style="display:none;">
+                <div class="slider-group">
+                    <label for="renome-hibbot">Renome:</label>
+                    <input type="number" id="renome-hibbot-input" value="0" min="0" max="100">
+                </div>
+                <div class="slider-group">
+                    <label for="world-hibbot">Hvordan verden ser dem:</label>
+                    <input type="number" id="world-hibbot-input" value="0" min="0" max="100">
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <label>Renome:</label>
+                <input type="range" id="renome-hibbot" min="0" max="100" value="0" disabled>
+                <span class="status" id="renome-hibbot-status">Ukendt</span>
+            </div>
+
+            <div class="slider-group">
+                <label>Hvordan verden ser dem:</label>
+                <input type="range" id="world-hibbot" min="0" max="100" value="0" disabled>
+                <span class="status" id="world-hibbot-status">Anonym</span>
+            </div>
+        </div>
+
+        <!-- Character: Goro Thukane -->
+        <div class="character">
+            <h2>Goro Thukane</h2>
+            
+            <div class="dm-controls" id="dm-section-goro" style="display:none;">
+                <div class="slider-group">
+                    <label for="renome-goro">Renome:</label>
+                    <input type="number" id="renome-goro-input" value="0" min="0" max="100">
+                </div>
+                <div class="slider-group">
+                    <label for="world-goro">Hvordan verden ser dem:</label>
+                    <input type="number" id="world-goro-input" value="0" min="0" max="100">
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <label>Renome:</label>
+                <input type="range" id="renome-goro" min="0" max="100" value="0" disabled>
+                <span class="status" id="renome-goro-status">Ukendt</span>
+            </div>
+
+            <div class="slider-group">
+                <label>Hvordan verden ser dem:</label>
+                <input type="range" id="world-goro" min="0" max="100" value="0" disabled>
+                <span class="status" id="world-goro-status">Anonym</span>
+            </div>
+        </div>
+
+        <!-- Character: Enoki Shiitake -->
+        <div class="character">
+            <h2>Enoki Shiitake</h2>
+            
+            <div class="dm-controls" id="dm-section-enoki" style="display:none;">
+                <div class="slider-group">
+                    <label for="renome-enoki">Renome:</label>
+                    <input type="number" id="renome-enoki-input" value="0" min="0" max="100">
+                </div>
+                <div class="slider-group">
+                    <label for="world-enoki">Hvordan verden ser dem:</label>
+                    <input type="number" id="world-enoki-input" value="0" min="0" max="100">
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <label>Renome:</label>
+                <input type="range" id="renome-enoki" min="0" max="100" value="0" disabled>
+                <span class="status" id="renome-enoki-status">Ukendt</span>
+            </div>
+
+            <div class="slider-group">
+                <label>Hvordan verden ser dem:</label>
+                <input type="range" id="world-enoki" min="0" max="100" value="0" disabled>
+                <span class="status" id="world-enoki-status">Anonym</span>
+            </div>
+        </div>
+
+        <!-- Character: Kehrrdon Darandarion -->
+        <div class="character">
+            <h2>Kehrrdon Darandarion</h2>
+            
+            <div class="dm-controls" id="dm-section-kehrrdon" style="display:none;">
+                <div class="slider-group">
+                    <label for="renome-kehrrdon">Renome:</label>
+                    <input type="number" id="renome-kehrrdon-input" value="0" min="0" max="100">
+                </div>
+                <div class="slider-group">
+                    <label for="world-kehrrdon">Hvordan verden ser dem:</label>
+                    <input type="number" id="world-kehrrdon-input" value="0" min="0" max="100">
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <label>Renome:</label>
+                <input type="range" id="renome-kehrrdon" min="0" max="100" value="0" disabled>
+                <span class="status" id="renome-kehrrdon-status">Ukendt</span>
+            </div>
+
+            <div class="slider-group">
+                <label>Hvordan verden ser dem:</label>
+                <input type="range" id="world-kehrrdon" min="0" max="100" value="0" disabled>
+                <span class="status" id="world-kehrrdon-status">Anonym</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const renomeLabels = ["Ukendt", "Kendt lokalt", "Anset", "Berømt", "Legendarisk"];
+        const worldLabels = ["Anonym", "Bemærket", "Respekteret", "Frygtet", "Dyrket"];
+
+        function updateSlider(inputId, sliderId, statusId, labels) {
+            const input = document.getElementById(inputId);
+            const slider = document.getElementById(sliderId);
+            const status = document.getElementById(statusId);
+
+            input.addEventListener('input', () => {
+                let value = input.value;
+                slider.value = value;
+
+                if (value <= 19) status.textContent = labels[0];
+                else if (value <= 39) status.textContent = labels[1];
+                else if (value <= 59) status.textContent = labels[2];
+                else if (value <= 79) status.textContent = labels[3];
+                else status.textContent = labels[4];
+            });
+        }
+
+        // Initialize all sliders
+        updateSlider("renome-hibbot-input", "renome-hibbot", "renome-hibbot-status", renomeLabels);
+        updateSlider("world-hibbot-input", "world-hibbot", "world-hibbot-status", worldLabels);
+
+        updateSlider("renome-goro-input", "renome-goro", "renome-goro-status", renomeLabels);
+        updateSlider("world-goro-input", "world-goro", "world-goro-status", worldLabels);
+
+        updateSlider("renome-enoki-input", "renome-enoki", "renome-enoki-status", renomeLabels);
+        updateSlider("world-enoki-input", "world-enoki", "world-enoki-status", worldLabels);
+
+        updateSlider("renome-kehrrdon-input", "renome-kehrrdon", "renome-kehrrdon-status", renomeLabels);
+        updateSlider("world-kehrrdon-input", "world-kehrrdon", "world-kehrrdon-status", worldLabels);
+
+        // Password protection for DM section
+        function showDMSection() {
+            const password = document.getElementById('password').value;
+            if (password === 'Fonseca1') {  // Udskift 'din_adgangskode' med din valgte kode
+                document.getElementById('dm-section-hibbot').style.display = 'block';
+                document.getElementById('dm-section-goro').style.display = 'block';
+                document.getElementById('dm-section-enoki').style.display = 'block';
+                document.getElementById('dm-section-kehrrdon').style.display = 'block';
+            } else {
+                alert('Forkert adgangskode!');
+            }
+        }
+    </script>
+
+</body>
+</html>
